@@ -1,5 +1,14 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NotFound from "./components/routes/NotFound";
+
 function App() {
-  return <div>Chakika </div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
