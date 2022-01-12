@@ -1,18 +1,17 @@
-import { ReactElement } from "react";
+import { forwardRef, ReactElement } from "react";
 
 interface Props {
   label: string | null;
   name: string;
   type: string;
   placeholder: string;
+  rest?: any;
 }
 
-export default function CustomInput({
-  label,
-  name,
-  type,
-  placeholder,
-}: Props): ReactElement {
+export default forwardRef(function CustomInput(
+  { label, name, type, placeholder, ...rest }: Props,
+  ref: any
+): ReactElement {
   return (
     <div className="my-4">
       {label && (
@@ -25,7 +24,9 @@ export default function CustomInput({
         type={type}
         placeholder={placeholder}
         name={name}
+        ref={ref}
+        {...rest}
       />
     </div>
   );
-}
+});
