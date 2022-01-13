@@ -42,7 +42,7 @@ export default function Signup(): ReactElement {
     formState: { errors },
   } = useForm<Credential>({
     resolver: useYupValidationResolver(schema),
-    reValidateMode: "onBlur",
+    mode: "onBlur",
   });
 
   const onSubmit = handleSubmit((data) => {
