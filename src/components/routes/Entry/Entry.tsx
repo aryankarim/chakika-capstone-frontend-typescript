@@ -5,7 +5,6 @@ import Signup from "../SignupPage/Signup";
 
 export default function Entry(): ReactElement {
   const [toggleLogin, setToggleLogin] = useState(true);
-  console.log(toggleLogin);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 divide-x">
       <div className="h-screen bg-lightGreen hidden md:block">
@@ -19,17 +18,6 @@ export default function Entry(): ReactElement {
         <div className="flex flex-row-reverse container mx-auto justify-right items-center w-4/5 h-32">
           <Button
             customStyle={`rounded-l-none ${
-              !toggleLogin && "bg-darkGreen hover:bg-darkGreen text-lightGreen"
-            }`}
-            onClick={() => {
-              setToggleLogin((prev) => !prev);
-            }}
-            isDisabled={!toggleLogin}
-          >
-            Sign Up
-          </Button>
-          <Button
-            customStyle={`rounded-r-none ${
               toggleLogin && "bg-darkGreen hover:bg-darkGreen text-lightGreen"
             }`}
             onClick={() => {
@@ -38,6 +26,17 @@ export default function Entry(): ReactElement {
             isDisabled={toggleLogin}
           >
             Sign In
+          </Button>
+          <Button
+            customStyle={`rounded-r-none ${
+              !toggleLogin && "bg-darkGreen hover:bg-darkGreen text-lightGreen"
+            }`}
+            onClick={() => {
+              setToggleLogin((prev) => !prev);
+            }}
+            isDisabled={!toggleLogin}
+          >
+            Sign Up
           </Button>
         </div>
 
