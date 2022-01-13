@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { useForm } from "react-hook-form";
-import CustomButton from "../../shared/CustomButton";
-import CustomInput from "../../shared/CustomInput";
+import Button from "../../shared/Button";
+import CustomInput from "../../shared/Input";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import * as yup from "yup";
 
@@ -129,7 +129,7 @@ export default function Signup(): ReactElement {
           )}
         </CustomInput>
 
-        <CustomButton customStyle="">Sign Up</CustomButton>
+        <Button customStyle="">Sign Up</Button>
       </form>
     </div>
   );

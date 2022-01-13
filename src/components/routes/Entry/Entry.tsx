@@ -1,5 +1,5 @@
 import { ReactElement, useState } from "react";
-import CustomButton from "../../shared/CustomButton";
+import Button from "../../shared/Button";
 import Login from "../LoginPage/Login";
 import Signup from "../SignupPage/Signup";
 
@@ -17,7 +17,7 @@ export default function Entry(): ReactElement {
       </div>
       <div className="h-screen bg-darkGreen">
         <div className="flex flex-row-reverse p-4">
-          <CustomButton
+          <Button
             customStyle={`rounded-l-none ${
               !toggleLogin && "bg-darkGreen hover:bg-darkGreen text-lightGreen"
             }`}
@@ -27,8 +27,8 @@ export default function Entry(): ReactElement {
             isDisabled={!toggleLogin}
           >
             Sign Up
-          </CustomButton>
-          <CustomButton
+          </Button>
+          <Button
             customStyle={`rounded-r-none ${
               toggleLogin && "bg-darkGreen hover:bg-darkGreen text-lightGreen"
             }`}
@@ -38,7 +38,7 @@ export default function Entry(): ReactElement {
             isDisabled={toggleLogin}
           >
             Sign In
-          </CustomButton>
+          </Button>
         </div>
 
         {toggleLogin ? <Login /> : <Signup />}

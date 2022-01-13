@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { useForm } from "react-hook-form";
-import CustomButton from "../../shared/CustomButton";
-import CustomInput from "../../shared/CustomInput";
+import Button from "../../shared/Button";
+import CustomInput from "../../shared/Input";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import * as yup from "yup";
 
@@ -25,7 +25,7 @@ export default function LoginPage(): ReactElement {
     formState: { errors },
   } = useForm<Credential>({
     resolver: useYupValidationResolver(schema),
-    reValidateMode: "onBlur",
+    mode: "onBlur",
   });
 
   const onSubmit = handleSubmit((data) => {
@@ -58,7 +58,7 @@ export default function LoginPage(): ReactElement {
         {errors?.password && (
           <p className="text-red-500 text-sm">{errors.password.message}</p>
         )}
-        <CustomButton customStyle="">Sign In</CustomButton>
+        <Button customStyle="">Sign In</Button>
       </form>
     </div>
   );
