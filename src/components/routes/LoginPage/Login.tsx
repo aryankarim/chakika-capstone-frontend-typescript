@@ -46,7 +46,7 @@ export default function LoginPage(): ReactElement {
           {...register("email")}
         />
         {errors?.email && (
-          <p className="text-red-500 text-sm">{errors.email.message}</p>
+          <p className="text-red-400 text-sm">{errors.email.message}</p>
         )}
         <CustomInput
           label={null}
@@ -56,7 +56,7 @@ export default function LoginPage(): ReactElement {
           {...register("password")}
         />
         {errors?.password && (
-          <p className="text-red-500 text-sm">{errors.password.message}</p>
+          <p className="text-red-400 text-sm">{errors.password.message}</p>
         )}
         <Button customStyle="">Sign In</Button>
       </form>

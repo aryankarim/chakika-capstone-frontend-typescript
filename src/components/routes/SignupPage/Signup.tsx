@@ -63,7 +63,7 @@ export default function Signup(): ReactElement {
           {...register("fname")}
         >
           {errors?.fname && (
-            <p className="text-red-500 text-sm">{errors.fname.message}</p>
+            <p className="text-red-400 text-sm">{errors.fname.message}</p>
           )}
         </CustomInput>
 
@@ -75,7 +75,7 @@ export default function Signup(): ReactElement {
           {...register("lname")}
         >
           {errors?.lname && (
-            <p className="text-red-500 text-sm">{errors.lname.message}</p>
+            <p className="text-red-400 text-sm">{errors.lname.message}</p>
           )}{" "}
         </CustomInput>
 
@@ -87,7 +87,7 @@ export default function Signup(): ReactElement {
           {...register("email")}
         >
           {errors?.email && (
-            <p className="text-red-500 text-sm">{errors.email.message}</p>
+            <p className="text-red-400 text-sm">{errors.email.message}</p>
           )}
         </CustomInput>
 
@@ -99,7 +99,7 @@ export default function Signup(): ReactElement {
           {...register("password")}
         >
           {errors?.password && (
-            <p className="text-red-500 text-sm">{errors.password.message}</p>
+            <p className="text-red-400 text-sm">{errors.password.message}</p>
           )}
         </CustomInput>
 
@@ -111,7 +111,7 @@ export default function Signup(): ReactElement {
           {...register("repeatpassword")}
         >
           {errors?.repeatpassword && (
-            <p className="text-red-500 text-sm">
+            <p className="text-red-400 text-sm">
               {errors.repeatpassword.message}
             </p>
           )}
@@ -125,7 +125,7 @@ export default function Signup(): ReactElement {
           {...register("phone")}
         >
           {errors?.phone && (
-            <p className="text-red-500 text-sm">{errors.phone.message}</p>
+            <p className="text-red-400 text-sm">{errors.phone.message}</p>
           )}
         </CustomInput>
 
