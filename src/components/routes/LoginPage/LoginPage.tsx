@@ -25,6 +25,7 @@ export default function LoginPage(): ReactElement {
     formState: { errors },
   } = useForm<Credential>({
     resolver: useYupValidationResolver(schema),
+    reValidateMode: "onBlur",
   });
 
   const onSubmit = handleSubmit((data) => {
@@ -32,8 +33,8 @@ export default function LoginPage(): ReactElement {
   });
 
   return (
-    <div className="container mx-auto">
-      <form className="flex flex-col" onSubmit={onSubmit}>
+    <div className="flex container mx-auto justify-center">
+      <form className="w-4/5" onSubmit={onSubmit}>
         <CustomInput
           label="Email"
           type="email"

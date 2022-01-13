@@ -13,18 +13,22 @@ export default forwardRef(function CustomInput(
   ref: any
 ): ReactElement {
   return (
-    <div className="my-4">
+    <div className="flex flex-col justify-items-center my-8">
       {label && (
-        <label htmlFor={name} className="block font-montserrat uppercase">
+        <label
+          htmlFor={name}
+          className="block text-lightGreen font-montserrat uppercase"
+        >
           {label}
         </label>
       )}
       <input
-        className="border-b-2 placeholder-gray-400"
+        className="border-b border-lightGreen placeholder-gray-900 text-lightGreen font-montserrat bg-transparent outline-0"
         type={type}
         placeholder={placeholder}
         name={name}
         ref={ref}
+        font-montserrat
         {...rest}
       />
     </div>
