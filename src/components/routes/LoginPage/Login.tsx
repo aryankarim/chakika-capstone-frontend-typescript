@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../../shared/Button";
-import CustomInput from "../../shared/Input";
+import Input from "../../shared/Input";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import * as yup from "yup";
 
@@ -38,26 +38,28 @@ export default function LoginPage(): ReactElement {
         className="grid grid-cols-2 w-4/5 gap-2 gap-y-7"
         onSubmit={onSubmit}
       >
-        <CustomInput
+        <Input
           label={null}
           type="email"
           placeholder="Email"
           customStyle="col-span-2 h-10"
           {...register("email")}
-        />
-        {errors?.email && (
-          <p className="text-red-400 text-sm">{errors.email.message}</p>
-        )}
-        <CustomInput
+        >
+          {errors?.email && (
+            <p className="text-red-400 text-sm">{errors.email.message}</p>
+          )}
+        </Input>
+        <Input
           label={null}
           type="password"
           placeholder="Password"
           customStyle="col-span-2 h-10"
           {...register("password")}
-        />
-        {errors?.password && (
-          <p className="text-red-400 text-sm">{errors.password.message}</p>
-        )}
+        >
+          {errors?.password && (
+            <p className="text-red-400 text-sm">{errors.password.message}</p>
+          )}
+        </Input>
         <Button customStyle="">Sign In</Button>
       </form>
     </div>
