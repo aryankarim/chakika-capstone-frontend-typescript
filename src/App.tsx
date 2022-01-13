@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Entry from "./components/routes/Entry/Entry";
 import NotFound from "./components/routes/Errors/NotFound";
-import LoginPage from "./components/routes/LoginPage/LoginPage";
 
 function App() {
   return (

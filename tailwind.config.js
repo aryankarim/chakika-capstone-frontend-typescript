@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         lightGreen: {
           DEFAULT: "#D4EDE8",
+          opaque: "#D4EDE890",
         },
         darkGreen: {
           DEFAULT: "#2A6559",

@@ -1,9 +1,11 @@
-import { ReactElement } from "react";
-import LoginPage from "../LoginPage/LoginPage";
+import { ReactElement, useState } from "react";
+import CustomButton from "../../shared/CustomButton";
+import Login from "../LoginPage/Login";
+import Signup from "../SignupPage/Signup";
 
-interface Props {}
-
-export default function Entry({}: Props): ReactElement {
+export default function Entry(): ReactElement {
+  const [toggleLogin, setToggleLogin] = useState(true);
+  console.log(toggleLogin);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 divide-x">
       <div className="h-screen bg-lightGreen hidden md:block">
@@ -13,8 +15,33 @@ export default function Entry({}: Props): ReactElement {
           className="absolute bottom-0 left-0 h-80 w-80"
         />
       </div>
-      <div className="flex h-screen bg-darkGreen justify-items-center">
-        <LoginPage />
+      <div className="h-screen bg-darkGreen">
+        <div className="flex flex-row-reverse p-4">
+          <CustomButton
+            customStyle={`rounded-l-none ${
+              !toggleLogin && "bg-darkGreen hover:bg-darkGreen text-lightGreen"
+            }`}
+            onClick={() => {
+              setToggleLogin((prev) => !prev);
+            }}
+            isDisabled={!toggleLogin}
+          >
+            Sign Up
+          </CustomButton>
+          <CustomButton
+            customStyle={`rounded-r-none ${
+              toggleLogin && "bg-darkGreen hover:bg-darkGreen text-lightGreen"
+            }`}
+            onClick={() => {
+              setToggleLogin((prev) => !prev);
+            }}
+            isDisabled={toggleLogin}
+          >
+            Sign In
+          </CustomButton>
+        </div>
+
+        {toggleLogin ? <Login /> : <Signup />}
       </div>
     </div>
   );

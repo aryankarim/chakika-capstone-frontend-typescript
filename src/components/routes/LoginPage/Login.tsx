@@ -34,20 +34,25 @@ export default function LoginPage(): ReactElement {
 
   return (
     <div className="flex container mx-auto justify-center">
-      <form className="w-4/5" onSubmit={onSubmit}>
+      <form
+        className="grid grid-cols-2 w-4/5 gap-2 gap-y-7"
+        onSubmit={onSubmit}
+      >
         <CustomInput
-          label="Email"
+          label={null}
           type="email"
-          placeholder="Enter your email"
+          placeholder="Email"
+          customStyle="col-span-2 h-10"
           {...register("email")}
         />
         {errors?.email && (
           <p className="text-red-500 text-sm">{errors.email.message}</p>
         )}
         <CustomInput
-          label="Password"
+          label={null}
           type="password"
-          placeholder="Enter your password"
+          placeholder="Password"
+          customStyle="col-span-2 h-10"
           {...register("password")}
         />
         {errors?.password && (
