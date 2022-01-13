@@ -11,13 +11,13 @@ const schema = yup
     fname: yup
       .string()
       .matches(/^[A-Za-z ]*$/, "Please enter valid name")
-      .min(2)
-      .max(40),
+      .min(2, "First Name is too short")
+      .max(40, "First Name is too long"),
     lname: yup
       .string()
       .matches(/^[A-Za-z ]*$/, "Please enter valid name")
-      .min(2)
-      .max(40),
+      .min(2, "Last Name is too short")
+      .max(40, "Last Name is too long"),
     email: yup.string().email("Invalid email").required("*"),
     password: yup.string().min(6).required("*"),
     repeatpassword: yup

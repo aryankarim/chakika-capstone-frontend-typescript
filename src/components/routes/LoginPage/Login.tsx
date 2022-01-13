@@ -8,7 +8,7 @@ import * as yup from "yup";
 const schema = yup
   .object()
   .shape({
-    email: yup.string().email("Email not found").required("*"),
+    email: yup.string().email("Invalid email").required("*"),
     password: yup.string().required("*"),
   })
   .required();
