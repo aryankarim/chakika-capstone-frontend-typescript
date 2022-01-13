@@ -23,7 +23,7 @@ const schema = yup
     repeatpassword: yup
       .string()
       .oneOf([yup.ref("password")], "Passwords must match"),
-    phone: yup.string().min(10),
+    phone: yup.string().min(10).required("*"),
   })
   .required();
 

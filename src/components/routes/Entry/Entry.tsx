@@ -16,7 +16,7 @@ export default function Entry(): ReactElement {
         />
       </div>
       <div className="h-screen bg-darkGreen">
-        <div className="flex flex-row-reverse p-4">
+        <div className="flex flex-row-reverse container mx-auto justify-right items-center w-4/5 h-32">
           <Button
             customStyle={`rounded-l-none ${
               !toggleLogin && "bg-darkGreen hover:bg-darkGreen text-lightGreen"
