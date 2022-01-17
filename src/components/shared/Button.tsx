@@ -7,7 +7,7 @@ interface Props {
   isDisabled?: boolean;
 }
 
-export default function CustomButton({
+export default function Button({
   children,
   customStyle,
   onClick,
@@ -24,7 +24,7 @@ export default function CustomButton({
   );
 }
 
-CustomButton.defaultProps = {
+Button.defaultProps = {
   children: "Button",
   customStyle: "",
 };
