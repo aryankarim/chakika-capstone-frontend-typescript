@@ -8,7 +8,7 @@ This project was previously made with JavaScript, and I'm currently busy migrati
 
 ## Technologies
 
-`ReactJS, Tailwindcss`
+`ReactJS, Tailwindcss, CircleCI`
 
 ## Features
 
