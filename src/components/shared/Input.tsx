@@ -10,7 +10,7 @@ interface Props {
   children?: any;
 }
 
-export default forwardRef(function CustomInput(
+export default forwardRef(function Input(
   { label, name, type, placeholder, customStyle, children, ...rest }: Props,
   ref: any
 ): ReactElement {
