@@ -1,12 +1,11 @@
+import { ReactElement } from "react";
 import aboutimage from "../../../images/chakika.png";
 
-type Props = {};
-
-export default function About({}: Props) {
+export default function About(): ReactElement {
   return (
     <div className="grid grid-cols-2 bg-lightGreen items-center text-darkGreen">
       <div className="col-span-2 lg:col-span-1 justify-self-center self-end lg:self-center w-4/6">
-        <img src={aboutimage} alt="chakika image" />
+        <img src={aboutimage} alt="chakika" />
       </div>
       <div className="flex flex-col col-span-2 lg:col-span-1 items-center lg:items-start">
         <h2 className="text-lg md:text-3xl font-bold my-6">What is Chakika?</h2>

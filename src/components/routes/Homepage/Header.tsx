@@ -2,9 +2,7 @@ import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../shared/Button";
 
-interface Props {}
-
-export default function Header({}: Props): ReactElement {
+export default function Header(): ReactElement {
   return (
     <div className="grid grid-cols-6 items-center bg-lightGreen md:gap-8">
       <div className="col-start-2 col-span-4 md:col-start-2 md:col-span-2 text-sm text-darkGreen space-y-3">
