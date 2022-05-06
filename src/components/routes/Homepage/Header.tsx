@@ -4,8 +4,8 @@ import Button from "../../shared/Button";
 
 export default function Header(): ReactElement {
   return (
-    <div className="grid grid-cols-6 items-center bg-lightGreen md:gap-8">
-      <div className="col-start-2 col-span-4 md:col-start-2 md:col-span-2 text-sm text-darkGreen space-y-3">
+    <div className="grid grid-cols-6 items-center bg-chakikaLightGreen md:gap-8">
+      <div className="col-start-2 col-span-4 md:col-start-2 md:col-span-2 text-sm text-chakikaDarkGreen space-y-3">
         <p>Having a car problem?</p>
         <h1 className="text-3xl font-bold">We've Got You Covered</h1>
         <p>
@@ -15,7 +15,7 @@ export default function Header(): ReactElement {
         </p>
 
         <Link to="/contact">
-          <Button customStyle="bg-darkGreen text-lightGreen hover:bg-darkGreen-darker mt-4">
+          <Button customStyle="bg-chakikaDarkGreen text-chakikaLightGreen hover:bg-chakikaDarkGreen-darker mt-4">
             Contact Us
           </Button>
         </Link>

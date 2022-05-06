@@ -3,7 +3,7 @@ import aboutimage from "../../../images/chakika.png";
 
 export default function About(): ReactElement {
   return (
-    <div className="grid grid-cols-2 bg-lightGreen items-center text-darkGreen">
+    <div className="grid grid-cols-2 bg-chakikaLightGreen items-center text-chakikaDarkGreen">
       <div className="col-span-2 lg:col-span-1 justify-self-center self-end lg:self-center w-4/6">
         <img src={aboutimage} alt="chakika" />
       </div>

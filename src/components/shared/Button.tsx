@@ -17,7 +17,7 @@ export default function Button({
     <button
       disabled={isDisabled}
       onClick={onClick}
-      className={`bg-lightGreen rounded-full w-24 h-10 hover:bg-lightGreen-opaque ${customStyle}`}
+      className={`bg-chakikaLightGreen rounded-full w-24 h-10 hover:bg-chakikaLightGreen-opaque ${customStyle}`}
     >
       {children}
     </button>
