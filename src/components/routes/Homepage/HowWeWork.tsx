@@ -2,8 +2,8 @@ import { ReactElement } from "react";
 
 export default function HowWeWork(): ReactElement {
   return (
-    <div className="flex w-full bg-lightGreen content-center justify-center items-center">
-      <div className="grid grid-cols-3 items-top text-darkGreen  md:h-1/2 text-center gap-3">
+    <div className="flex w-full bg-chakikaLightGreen content-center justify-center items-center">
+      <div className="grid grid-cols-3 items-top text-chakikaDarkGreen  md:h-1/2 text-center gap-3">
         <h2 className="col-span-3 text-4xl place-self-center">
           How Chakika Works
         </h2>

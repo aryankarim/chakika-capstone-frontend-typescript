@@ -7,7 +7,7 @@ import About from "./About";
 export default function Home(): ReactElement {
   const ref = useRef<any>();
   return (
-    <Parallax pages={3} ref={ref} className="bg-darkGreen">
+    <Parallax pages={3} ref={ref} className="bg-chakikaDarkGreen">
       <ParallaxLayer offset={0} className="flex justify-center">
         <Header />
       </ParallaxLayer>
