@@ -19,7 +19,7 @@ const garageData = {
 };
 
 export default function Garage() {
-  const [savedCarState, setSavedCarState] = useState(false);
+  const [savedCarState] = useState(false);
 
   return (
     <div className="container mx-auto h-screen">
@@ -31,26 +31,28 @@ export default function Garage() {
           <option selected disabled>
             BRAND
           </option>
-          {garageData.brand.map((item) => (
-            <option key={item.brand_id}>{item.brand_name}</option>
-          ))}
+          {garageData.brand.map((item) => {
+            return <option key={item.brand_id}>{item.brand_name}</option>;
+          })}
         </select>
         <select className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple">
           <option selected disabled>
             MODEL
           </option>
-          {garageData.model.map((item) => (
-            <option key={item.model_id}>{item.model_name}</option>
-          ))}
+          {garageData.model.map((item) => {
+            return <option key={item.model_id}>{item.model_name}</option>;
+          })}
         </select>
         <select className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple">
           <option selected disabled>
             YEAR
           </option>
           {garageData.year.map((item) => {
-            <option value={item.model_year} selected>
-              {item.model_year}
-            </option>;
+            return (
+              <option value={item.model_year} selected>
+                {item.model_year}
+              </option>
+            );
           })}
         </select>
         <select className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple">
