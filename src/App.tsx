@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
 // import Entry from "./components/routes/Entry/Entry";
 import NotFound from "./components/routes/Errors/NotFound";
 import Garage from "./components/routes/GaragePage/Garage";
@@ -8,8 +9,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/garage" element={<Garage />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/garage" element={<Garage />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

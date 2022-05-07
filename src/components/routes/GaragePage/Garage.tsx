@@ -22,7 +22,7 @@ export default function Garage() {
   const [savedCarState] = useState(false);
 
   return (
-    <div className="container mx-auto h-screen">
+    <div className="container mx-auto">
       <div className="grid grid-cols-6 gap-4 justify-center">
         <button className="rounded bg-chakikaLightGreen focus:outline-chakikaPurple">
           {savedCarState ? "remove" : "Save"}
