@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { IoIosMenu } from "react-icons/io";
+import { CgMenu, CgClose } from "react-icons/cg";
 import { useState } from "react";
 
 const navItems = [
@@ -21,18 +21,26 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`md:container md:mx-auto flex items-start md:items-center justify-between ${
-          !isClosed ? "h-screen" : "h-10"
+        className={`md:container md:mx-auto flex items-start md:items-center ${
+          !isClosed ? "h-screen flex-col" : "h-10"
         } md:h-10`}
       >
-        <IoIosMenu className="md:hidden w-6 h-6 m-2" onClick={openMenu} />
+        {isClosed ? (
+          <CgMenu className="md:hidden w-6 h-6 m-2" onClick={openMenu} />
+        ) : (
+          <CgClose className="md:hidden w-6 h-6 m-2" onClick={openMenu} />
+        )}
         <div
           className={`${
-            isClosed ? "hidden" : "flex pt-10"
+            isClosed ? "hidden" : "flex"
           } md:flex items-center gap-4 bg-white flex-col md:flex-row w-full `}
         >
           {navItems.map(({ pathName, href }) => {
-            return <Link to={href}>{pathName}</Link>;
+            return (
+              <Link to={href} onClick={openMenu}>
+                {pathName}
+              </Link>
+            );
           })}
         </div>
       </nav>
