@@ -22,22 +22,34 @@ export default function Navbar() {
     <>
       <nav
         className={`md:container md:mx-auto flex items-start md:items-center ${
-          !isClosed ? "h-screen flex-col" : "h-10"
+          !isClosed ? "h-screen flex-col" : "h-12"
         } md:h-10`}
       >
         {isClosed ? (
-          <CgMenu className="md:hidden w-6 h-6 m-2" onClick={openMenu} />
+          <CgMenu className="md:hidden w-6 h-6 m-3" onClick={openMenu} />
         ) : (
-          <CgClose className="md:hidden w-6 h-6 m-2" onClick={openMenu} />
+          <CgClose className="md:hidden w-6 h-6 m-3" onClick={openMenu} />
         )}
         <div
           className={`${
             isClosed ? "hidden" : "flex"
-          } md:flex items-center gap-4 bg-white flex-col md:flex-row w-full `}
+          } md:flex items-center gap-1 md:gap-6 bg-white flex-col md:flex-row w-full `}
         >
           {navItems.map(({ pathName, href }) => {
             return (
-              <Link to={href} onClick={openMenu}>
+              <Link
+                to={href}
+                onClick={openMenu}
+                style={{
+                  ...(!isClosed && {
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "38px",
+                    width: "100%",
+                  }),
+                }}
+              >
                 {pathName}
               </Link>
             );
