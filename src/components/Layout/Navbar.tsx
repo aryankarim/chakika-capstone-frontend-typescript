@@ -21,8 +21,8 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`md:container md:mx-auto flex items-start md:items-center ${
-          !isClosed ? "h-screen flex-col" : "h-12"
+        className={`md:container md:mx-auto flex items-start md:items-center bg-white ${
+          !isClosed ? "h-screen w-screen fixed flex-col" : "h-12"
         } md:h-10`}
       >
         {isClosed ? (
@@ -33,13 +33,12 @@ export default function Navbar() {
         <div
           className={`${
             isClosed ? "hidden" : "flex"
-          } md:flex items-center gap-1 md:gap-6 bg-white flex-col md:flex-row w-full `}
+          } md:flex items-center gap-1 md:gap-6 flex-col md:flex-row w-full `}
         >
           {navItems.map(({ pathName, href }) => {
             return (
               <Link
                 to={href}
-                onClick={openMenu}
                 style={{
                   ...(!isClosed && {
                     display: "flex",
