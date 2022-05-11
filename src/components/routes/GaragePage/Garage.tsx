@@ -24,40 +24,52 @@ export default function Garage() {
   return (
     <div className="container mx-auto h-screen py-4 px-2">
       <div className="grid grid-cols-6 gap-4 justify-center">
-        <button className="col-span-6 md:col-span-1 rounded bg-chakikaLightGreen order-last md:order-none focus:outline-chakikaPurple">
+        <button className="col-span-3 md:col-span-1 rounded bg-chakikaLightGreen order-last md:order-none focus:outline-chakikaPurple">
           {savedCarState ? "remove" : "Save"}
         </button>
         <div className="flex flex-col md:flex-row gap-2 w-full col-span-6 md:col-span-4">
-          <select className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4">
-            <option selected disabled>
+          <select
+            defaultValue={"default"}
+            className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4"
+          >
+            <option value={"default"} disabled>
               BRAND
             </option>
             {garageData.brand.map((item) => {
               return <option key={item.brand_id}>{item.brand_name}</option>;
             })}
           </select>
-          <select className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4">
-            <option selected disabled>
+          <select
+            defaultValue={"default"}
+            className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4"
+          >
+            <option value={"default"} disabled>
               MODEL
             </option>
             {garageData.model.map((item) => {
               return <option key={item.model_id}>{item.model_name}</option>;
             })}
           </select>
-          <select className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4">
-            <option selected disabled>
+          <select
+            defaultValue={"default"}
+            className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4"
+          >
+            <option disabled value={"default"}>
               YEAR
             </option>
             {garageData.year.map((item) => {
               return (
-                <option value={item.model_year} selected>
+                <option value={item.model_year} key={item.year_id}>
                   {item.model_year}
                 </option>
               );
             })}
           </select>
-          <select className="col-span-1 rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4">
-            <option selected disabled>
+          <select
+            defaultValue={"default"}
+            className="col-span-1 rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4"
+          >
+            <option value={"default"} disabled>
               CATEGORY
             </option>
             <option value="interior">interior</option>
@@ -66,7 +78,7 @@ export default function Garage() {
           </select>
         </div>
 
-        <button className="col-span-6 md:col-span-1 order-last md:order-none rounded bg-chakikaLightGreen focus:outline-chakikaPurple">
+        <button className="col-span-3 md:col-span-1 order-last md:order-none rounded bg-chakikaLightGreen focus:outline-chakikaPurple">
           Search
         </button>
       </div>
