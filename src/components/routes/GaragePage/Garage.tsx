@@ -28,36 +28,48 @@ export default function Garage() {
           {savedCarState ? "remove" : "Save"}
         </button>
         <div className="flex flex-col md:flex-row gap-2 w-full col-span-6 md:col-span-4">
-          <select className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4">
-            <option selected disabled>
+          <select
+            defaultValue={"default"}
+            className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4"
+          >
+            <option value={"default"} disabled>
               BRAND
             </option>
             {garageData.brand.map((item) => {
               return <option key={item.brand_id}>{item.brand_name}</option>;
             })}
           </select>
-          <select className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4">
-            <option selected disabled>
+          <select
+            defaultValue={"default"}
+            className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4"
+          >
+            <option value={"default"} disabled>
               MODEL
             </option>
             {garageData.model.map((item) => {
               return <option key={item.model_id}>{item.model_name}</option>;
             })}
           </select>
-          <select className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4">
-            <option selected disabled>
+          <select
+            defaultValue={"default"}
+            className="rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4"
+          >
+            <option disabled value={"default"}>
               YEAR
             </option>
             {garageData.year.map((item) => {
               return (
-                <option value={item.model_year} selected>
+                <option value={item.model_year} key={item.year_id}>
                   {item.model_year}
                 </option>
               );
             })}
           </select>
-          <select className="col-span-1 rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4">
-            <option selected disabled>
+          <select
+            defaultValue={"default"}
+            className="col-span-1 rounded bg-chakikaGrey border border-chakikaDarkGreen focus:outline-chakikaPurple w-full md:w-1/4"
+          >
+            <option value={"default"} disabled>
               CATEGORY
             </option>
             <option value="interior">interior</option>

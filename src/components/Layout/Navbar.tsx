@@ -18,6 +18,9 @@ export default function Navbar() {
     setIsClosed((prev) => !prev);
   };
 
+  const closeMenu = () => {
+    setIsClosed(true);
+  };
   return (
     <>
       <nav
@@ -38,7 +41,11 @@ export default function Navbar() {
           {navItems.map(({ pathName, href }) => {
             return (
               <Link
+                key={pathName}
                 to={href}
+                {...(!isClosed && {
+                  onClick: closeMenu,
+                })}
                 style={{
                   ...(!isClosed && {
                     display: "flex",
