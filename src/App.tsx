@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import NotFound from "./components/routes/Errors/NotFound";
 import Garage from "./components/routes/GaragePage/Garage";
 import Home from "./components/routes/Homepage/Home";
+import Contact from "./components/routes/ContactPage/Contact";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/garage" element={<Garage />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
