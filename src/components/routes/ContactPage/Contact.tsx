@@ -1,5 +1,4 @@
-import { TextField } from "@mui/material";
-import { buttonStyle } from "../../../utils/constants";
+import { Button, TextField } from "@mui/material";
 
 export default function Contact() {
   return (
@@ -29,7 +28,14 @@ export default function Contact() {
             fullWidth
           />
         </div>
-        <button className={buttonStyle}>Send</button>
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          sx={{ height: 50 }}
+        >
+          Contained
+        </Button>
       </div>
     </div>
   );
