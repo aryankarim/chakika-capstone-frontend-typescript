@@ -1,4 +1,4 @@
-import TailwindCustomInput from "../../../shared/TailwindCustomInput";
+import { TextField } from "@mui/material";
 import { buttonStyle } from "../../../utils/constants";
 
 export default function Contact() {
@@ -9,33 +9,25 @@ export default function Contact() {
       </div>
       <div className="container mx-auto max-w-3xl mt-6">
         <div className="flex gap-4 mb-4">
-          <TailwindCustomInput
-            type="text"
-            name="name"
-            placeholder=" "
-            required
-            label="Name"
-          />
-          <TailwindCustomInput
-            type="email"
-            name="email"
-            placeholder=" "
-            required
-            label="Email"
+          <TextField id="name" label="Name" variant="outlined" fullWidth />
+          <TextField id="phone" label="Phone" variant="outlined" fullWidth />
+        </div>
+        <div className="mb-4">
+          <TextField
+            id="subject"
+            label="Subject"
+            variant="outlined"
+            fullWidth
           />
         </div>
-        <TailwindCustomInput
-          type="text"
-          name="subject"
-          placeholder=" "
-          required
-          label="Subject"
-        />
-        <div className="relative z-0 w-full border rounded mb-4">
-          <textarea name="name" placeholder=" " required className={" h-48"} />
-          <label htmlFor="message" className={""}>
-            Message
-          </label>
+        <div className="mb-4">
+          <TextField
+            id="outlined-multiline-static"
+            label="Multiline"
+            multiline
+            rows={4}
+            fullWidth
+          />
         </div>
         <button className={buttonStyle}>Send</button>
       </div>
