@@ -1,4 +1,5 @@
-import { buttonStyle, inputStyle, labelStyle } from "../../../utils/constants";
+import TailwindCustomInput from "../../../shared/TailwindCustomInput";
+import { buttonStyle } from "../../../utils/constants";
 
 export default function Contact() {
   return (
@@ -8,51 +9,31 @@ export default function Contact() {
       </div>
       <div className="container mx-auto max-w-3xl mt-6">
         <div className="flex gap-4 mb-4">
-          <div className="relative z-0 w-full border rounded">
-            <input
-              type="text"
-              name="name"
-              placeholder=" "
-              required
-              className={inputStyle}
-            />
-            <label htmlFor="name" className={labelStyle}>
-              Name
-            </label>
-          </div>
-          <div className="relative z-0 w-full border rounded">
-            <input
-              type="text"
-              name="phone"
-              placeholder=" "
-              required
-              className={inputStyle}
-            />
-            <label htmlFor="phone" className={labelStyle}>
-              Phone Number
-            </label>
-          </div>
-        </div>
-        <div className="relative z-0 w-full border rounded mb-4">
-          <input
+          <TailwindCustomInput
             type="text"
-            name="subject"
-            placeholder=" "
-            required
-            className={inputStyle}
-          />
-          <label htmlFor="subject" className={labelStyle}>
-            Subject
-          </label>
-        </div>
-        <div className="relative z-0 w-full border rounded mb-4">
-          <textarea
             name="name"
             placeholder=" "
             required
-            className={inputStyle + " h-48"}
+            label="Name"
           />
-          <label htmlFor="message" className={labelStyle}>
+          <TailwindCustomInput
+            type="email"
+            name="email"
+            placeholder=" "
+            required
+            label="Email"
+          />
+        </div>
+        <TailwindCustomInput
+          type="text"
+          name="subject"
+          placeholder=" "
+          required
+          label="Subject"
+        />
+        <div className="relative z-0 w-full border rounded mb-4">
+          <textarea name="name" placeholder=" " required className={" h-48"} />
+          <label htmlFor="message" className={""}>
             Message
           </label>
         </div>
