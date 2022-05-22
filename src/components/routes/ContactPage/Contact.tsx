@@ -34,7 +34,7 @@ export default function Contact() {
           fullWidth
           sx={{ height: 50 }}
         >
-          Contained
+          Send
         </Button>
       </div>
     </div>
