@@ -14,14 +14,21 @@ export default function Contact() {
   const resolver = useYupValidationResolver(contactValidationSchema);
   const {
     register,
+    handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Inputs>({ resolver, mode: "onBlur" });
+
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    reset();
+  });
   return (
     <div>
       <div className="bg-chakikaDarkGreen h-24 flex justify-center items-center text-center font-bold text-chakikaGrey">
         Can't Find What You're Looking For? <br /> Send Us Your Custom Order
       </div>
-      <div className="container mx-auto max-w-3xl mt-6">
+      <form className="container mx-auto max-w-3xl mt-6" onSubmit={onSubmit}>
         <div className="flex gap-4 mb-4">
           <TextField
             {...register("name")}
@@ -66,6 +73,7 @@ export default function Contact() {
           />
         </div>
         <Button
+          type="submit"
           variant="contained"
           color="primary"
           fullWidth
@@ -73,7 +81,7 @@ export default function Contact() {
         >
           Send
         </Button>
-      </div>
+      </form>
     </div>
   );
 }

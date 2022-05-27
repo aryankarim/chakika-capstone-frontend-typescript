@@ -25,33 +25,30 @@ export const contactValidationSchema = yup.object({
 });
 
 // LOGIN PAGE
-export const loginValidationSchema = yup
-  .object()
-  .shape({
-    email: yup.string().email("Invalid email").required("*"),
-    password: yup.string().required("*"),
-  })
-  .required();
+export const loginValidationSchema = yup.object({
+  email: yup.string().email("Invalid email").required("*"),
+  password: yup.string().required("*"),
+});
 
 // SIGNUP PAGE
-export const signUpValidationSchema = yup
-  .object()
-  .shape({
-    fname: yup
-      .string()
-      .matches(/^[A-Za-z ]*$/, "Please enter valid name")
-      .min(2, "First Name is too short")
-      .max(40, "First Name is too long"),
-    lname: yup
-      .string()
-      .matches(/^[A-Za-z ]*$/, "Please enter valid name")
-      .min(2, "Last Name is too short")
-      .max(40, "Last Name is too long"),
-    email: yup.string().email("Invalid email").required("*"),
-    password: yup.string().min(6).required("*"),
-    repeatpassword: yup
-      .string()
-      .oneOf([yup.ref("password")], "Passwords must match"),
-    phone: yup.string().min(10).required("*"),
-  })
-  .required();
+export const signUpValidationSchema = yup.object({
+  fname: yup
+    .string()
+    .matches(/^[A-Za-z ]*$/, "Please enter valid name")
+    .min(3, "First Name is too short")
+    .max(40, "First Name is too long")
+    .required("*"),
+  lname: yup
+    .string()
+    .matches(/^[A-Za-z ]*$/, "Please enter valid name")
+    .min(3, "Last Name is too short")
+    .max(40, "Last Name is too long")
+    .required("*"),
+
+  email: yup.string().email("Invalid email").required("*"),
+  password: yup.string().min(6).required("*"),
+  repeatpassword: yup
+    .string()
+    .oneOf([yup.ref("password")], "Passwords must match"),
+  phone: yup.string().min(10).required("*"),
+});
