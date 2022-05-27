@@ -75,7 +75,12 @@ export default function SignUp(): ReactElement {
           register={register}
         />
 
-        <Button variant="contained" color="secondary" sx={{ height: 50 }}>
+        <Button
+          type="submit"
+          variant="contained"
+          color="secondary"
+          sx={{ height: 50 }}
+        >
           Sign Up
         </Button>
       </form>
