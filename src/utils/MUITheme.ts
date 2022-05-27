@@ -9,5 +9,8 @@ export const themeOptions: ThemeOptions = createTheme({
     secondary: {
       main: "#D4EDE8",
     },
+    error: {
+      main: "#ff7878",
+    },
   },
 });
