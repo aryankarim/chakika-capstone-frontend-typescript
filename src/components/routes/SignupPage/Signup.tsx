@@ -3,29 +3,7 @@ import { useForm } from "react-hook-form";
 import Button from "../../shared/Button";
 import CustomInput from "../../shared/Input";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
-import * as yup from "yup";
-
-const schema = yup
-  .object()
-  .shape({
-    fname: yup
-      .string()
-      .matches(/^[A-Za-z ]*$/, "Please enter valid name")
-      .min(2, "First Name is too short")
-      .max(40, "First Name is too long"),
-    lname: yup
-      .string()
-      .matches(/^[A-Za-z ]*$/, "Please enter valid name")
-      .min(2, "Last Name is too short")
-      .max(40, "Last Name is too long"),
-    email: yup.string().email("Invalid email").required("*"),
-    password: yup.string().min(6).required("*"),
-    repeatpassword: yup
-      .string()
-      .oneOf([yup.ref("password")], "Passwords must match"),
-    phone: yup.string().min(10).required("*"),
-  })
-  .required();
+import { signUpValidationSchema } from "../../../utils/validatorSchemas";
 
 interface Credential {
   fname: string;
@@ -41,7 +19,7 @@ export default function Signup(): ReactElement {
     handleSubmit,
     formState: { errors },
   } = useForm<Credential>({
-    resolver: useYupValidationResolver(schema),
+    resolver: useYupValidationResolver(signUpValidationSchema),
     mode: "onBlur",
   });
 

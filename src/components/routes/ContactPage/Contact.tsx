@@ -1,30 +1,7 @@
 import { Button, InputBaseComponentProps, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import { contactValidationSchema } from "../../../utils/validatorSchemas";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
-
-const validationSchema = yup.object({
-  name: yup
-    .string()
-    .min(3, "Too Short!")
-    .max(60, "Too Long! Please consider applying for Guinness WR!")
-    .required("*"),
-  phone: yup
-    .string()
-    .min(10, "Invalid Phone Number!")
-    .max(15, "Too Long! We can't contact numbers from outside Earth!")
-    .required("*"),
-  subject: yup
-    .string()
-    .min(6, "Too Short!")
-    .max(100, "Too Long!")
-    .required("*"),
-  message: yup
-    .string()
-    .min(20, `Too Short! At least include the website link!`)
-    .max(600, "Too Long! You should consider writing a book!")
-    .required("*"),
-});
 
 interface Inputs {
   name: string;
@@ -34,13 +11,13 @@ interface Inputs {
 }
 
 export default function Contact() {
-  const resolver = useYupValidationResolver(validationSchema);
+  const resolver = useYupValidationResolver(contactValidationSchema);
   const {
     handleSubmit,
     register,
     formState: { errors },
     reset,
-  } = useForm<InputBaseComponentProps>({ resolver, mode: "onBlur" });
+  } = useForm<Inputs>({ resolver, mode: "onBlur" });
   const onSubmit = (data: any) => console.log(data);
   console.log(errors);
   return (
