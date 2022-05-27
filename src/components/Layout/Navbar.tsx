@@ -6,7 +6,7 @@ import Menu from "../shared/Menu";
 const navItems = [
   { pathName: "Home", href: "/" },
   { pathName: "Garage", href: "/garage" },
-  { pathName: "Contact Us", href: "/" },
+  { pathName: "Contact Us", href: "/contact" },
   { pathName: "Find", href: "/" },
   { pathName: "Cart", href: "/" },
 ];

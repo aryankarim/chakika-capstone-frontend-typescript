@@ -3,15 +3,7 @@ import { useForm } from "react-hook-form";
 import Button from "../../shared/Button";
 import Input from "../../shared/Input";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
-import * as yup from "yup";
-
-const schema = yup
-  .object()
-  .shape({
-    email: yup.string().email("Invalid email").required("*"),
-    password: yup.string().required("*"),
-  })
-  .required();
+import { loginValidationSchema } from "../../../utils/validatorSchemas";
 
 interface Credential {
   email: string;
@@ -24,7 +16,7 @@ export default function LoginPage(): ReactElement {
     handleSubmit,
     formState: { errors },
   } = useForm<Credential>({
-    resolver: useYupValidationResolver(schema),
+    resolver: useYupValidationResolver(loginValidationSchema),
     mode: "onBlur",
   });
 
