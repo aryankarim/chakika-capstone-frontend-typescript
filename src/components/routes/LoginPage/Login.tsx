@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import { useForm } from "react-hook-form";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import { loginValidationSchema } from "../../../utils/validatorSchemas";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 interface Credential {
   email: string;
@@ -25,33 +25,43 @@ export default function LoginPage(): ReactElement {
 
   return (
     <div className="flex container mx-auto justify-center">
-      <form
-        className="grid grid-cols-2 w-4/5 gap-2 gap-y-7"
-        onSubmit={onSubmit}
-      >
-        {/* <Input
-          label={null}
-          type="email"
-          placeholder="Email"
-          customStyle="col-span-2 h-10"
+      <form className="flex flex-col gap-y-4 w-4/5 " onSubmit={onSubmit}>
+        <TextField
           {...register("email")}
-        >
-          {errors?.email && (
-            <p className="text-red-400 text-sm">{errors.email.message}</p>
-          )}
-        </Input>
-        <Input
-          label={null}
-          type="password"
-          placeholder="Password"
-          customStyle="col-span-2 h-10"
+          id="email"
+          label="Email"
+          color="secondary"
+          variant="outlined"
+          fullWidth
+          error={errors?.email ? true : false}
+          helperText={errors?.email ? errors.email.message : null}
+          sx={{
+            "& .MuiInputLabel-root": { color: "secondary.main" },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": { borderColor: "secondary.main" },
+            },
+          }}
+        />
+        <TextField
           {...register("password")}
-        >
-          {errors?.password && (
-            <p className="text-red-400 text-sm">{errors.password.message}</p>
-          )}
-        </Input> */}
-        <Button>Sign In</Button>
+          id="password"
+          label="Password"
+          color="secondary"
+          variant="outlined"
+          type="password"
+          fullWidth
+          error={errors?.password ? true : false}
+          helperText={errors?.password ? errors.password.message : null}
+          sx={{
+            "& .MuiInputLabel-root": { color: "secondary.main" },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": { borderColor: "secondary.main" },
+            },
+          }}
+        />
+        <Button variant="contained" color="secondary" sx={{ height: 50 }}>
+          Sign In
+        </Button>
       </form>
     </div>
   );

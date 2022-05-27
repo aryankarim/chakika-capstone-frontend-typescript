@@ -28,7 +28,7 @@ export default function Entry(): ReactElement {
             }}
             disabled={toggleLogin}
           >
-            Sign Up
+            Sign In
           </Button>
           <Button
             {...(toggleLogin && {
@@ -44,7 +44,7 @@ export default function Entry(): ReactElement {
             }}
             disabled={!toggleLogin}
           >
-            Sign In
+            Sign Up
           </Button>
         </div>
 
