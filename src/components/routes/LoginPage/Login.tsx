@@ -1,9 +1,8 @@
 import { ReactElement } from "react";
 import { useForm } from "react-hook-form";
-import Button from "../../shared/Button";
-import Input from "../../shared/Input";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import { loginValidationSchema } from "../../../utils/validatorSchemas";
+import { Button } from "@mui/material";
 
 interface Credential {
   email: string;
@@ -30,7 +29,7 @@ export default function LoginPage(): ReactElement {
         className="grid grid-cols-2 w-4/5 gap-2 gap-y-7"
         onSubmit={onSubmit}
       >
-        <Input
+        {/* <Input
           label={null}
           type="email"
           placeholder="Email"
@@ -51,8 +50,8 @@ export default function LoginPage(): ReactElement {
           {errors?.password && (
             <p className="text-red-400 text-sm">{errors.password.message}</p>
           )}
-        </Input>
-        <Button customStyle="">Sign In</Button>
+        </Input> */}
+        <Button>Sign In</Button>
       </form>
     </div>
   );

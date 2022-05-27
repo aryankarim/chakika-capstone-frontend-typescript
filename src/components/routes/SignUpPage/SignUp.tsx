@@ -1,9 +1,8 @@
 import { ReactElement } from "react";
 import { useForm } from "react-hook-form";
-import Button from "../../shared/Button";
-import CustomInput from "../../shared/Input";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import { signUpValidationSchema } from "../../../utils/validatorSchemas";
+import { Button } from "@mui/material";
 
 interface Credential {
   fname: string;
@@ -13,7 +12,7 @@ interface Credential {
   repeatpassword: string;
   phone: string;
 }
-export default function Signup(): ReactElement {
+export default function SignUp(): ReactElement {
   const {
     register,
     handleSubmit,
@@ -33,7 +32,7 @@ export default function Signup(): ReactElement {
         className="grid grid-cols-2 w-4/5 gap-2 gap-y-7"
         onSubmit={onSubmit}
       >
-        <CustomInput
+        {/* <CustomInput
           label={null}
           type="text"
           placeholder="First Name"
@@ -105,9 +104,9 @@ export default function Signup(): ReactElement {
           {errors?.phone && (
             <p className="text-red-400 text-sm">{errors.phone.message}</p>
           )}
-        </CustomInput>
+        </CustomInput> */}
 
-        <Button customStyle="">Sign Up</Button>
+        <Button>Sign Up</Button>
       </form>
     </div>
   );

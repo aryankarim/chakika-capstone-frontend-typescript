@@ -1,7 +1,7 @@
+import { Button } from "@mui/material";
 import { ReactElement, useState } from "react";
-import Button from "../../shared/Button";
 import Login from "../LoginPage/Login";
-import Signup from "../SignupPage/Signup";
+import SignUp from "../SignUpPage/SignUp";
 
 export default function Entry(): ReactElement {
   const [toggleLogin, setToggleLogin] = useState(true);
@@ -17,32 +17,38 @@ export default function Entry(): ReactElement {
       <div className="h-screen bg-chakikaDarkGreen">
         <div className="flex flex-row-reverse container mx-auto justify-right items-center w-4/5 h-32">
           <Button
-            customStyle={`rounded-l-none ${
-              toggleLogin &&
-              "bg-chakikaDarkGreen hover:bg-chakikaDarkGreen text-chakikaLightGreen"
-            }`}
+            {...(!toggleLogin && { color: "secondary" })}
+            variant="contained"
+            sx={{
+              borderRadius: "0 28px 28px 0",
+              boxShadow: 0,
+            }}
             onClick={() => {
               setToggleLogin((prev) => !prev);
             }}
-            isDisabled={toggleLogin}
-          >
-            Sign In
-          </Button>
-          <Button
-            customStyle={`rounded-r-none ${
-              !toggleLogin &&
-              "bg-chakikaDarkGreen hover:bg-chakikaDarkGreen text-chakikaLightGreen"
-            }`}
-            onClick={() => {
-              setToggleLogin((prev) => !prev);
-            }}
-            isDisabled={!toggleLogin}
+            disabled={toggleLogin}
           >
             Sign Up
           </Button>
+          <Button
+            {...(toggleLogin && {
+              color: "secondary",
+            })}
+            variant="contained"
+            sx={{
+              borderRadius: "28px 0 0 28px",
+              boxShadow: 0,
+            }}
+            onClick={() => {
+              setToggleLogin((prev) => !prev);
+            }}
+            disabled={!toggleLogin}
+          >
+            Sign In
+          </Button>
         </div>
 
-        {toggleLogin ? <Login /> : <Signup />}
+        {toggleLogin ? <Login /> : <SignUp />}
       </div>
     </div>
   );

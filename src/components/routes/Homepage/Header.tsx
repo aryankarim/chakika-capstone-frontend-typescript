@@ -1,6 +1,6 @@
+import { Button } from "@mui/material";
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
-import Button from "../../shared/Button";
 
 export default function Header(): ReactElement {
   return (
@@ -15,10 +15,9 @@ export default function Header(): ReactElement {
         </p>
 
         <Link to="/contact">
-          <Button customStyle="bg-chakikaDarkGreen text-chakikaLightGreen hover:bg-chakikaDarkGreen-darker mt-4">
-            Contact Us
-          </Button>
+          <Button>Contact Us</Button>
         </Link>
+        {/* customStyle="bg-chakikaDarkGreen text-chakikaLightGreen hover:bg-chakikaDarkGreen-darker mt-4" */}
       </div>
       <img
         src="/images/logo.png"
