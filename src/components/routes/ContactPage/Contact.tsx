@@ -1,4 +1,4 @@
-import { Button, InputBaseComponentProps, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { contactValidationSchema } from "../../../utils/validatorSchemas";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
@@ -13,13 +13,9 @@ interface Inputs {
 export default function Contact() {
   const resolver = useYupValidationResolver(contactValidationSchema);
   const {
-    handleSubmit,
     register,
     formState: { errors },
-    reset,
   } = useForm<Inputs>({ resolver, mode: "onBlur" });
-  const onSubmit = (data: any) => console.log(data);
-  console.log(errors);
   return (
     <div>
       <div className="bg-chakikaDarkGreen h-24 flex justify-center items-center text-center font-bold text-chakikaGrey">
