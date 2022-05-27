@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import { signUpValidationSchema } from "../../../utils/validatorSchemas";
 import { Button, TextField } from "@mui/material";
+import Input from "../../shared/Input";
 
 interface Credential {
   fname: string;
@@ -30,111 +31,50 @@ export default function SignUp(): ReactElement {
     <div className="flex container mx-auto justify-center">
       <form className="flex flex-col w-4/5 gap-2 gap-y-4" onSubmit={onSubmit}>
         <div className="flex gap-x-4">
-          <TextField
-            {...register("fname")}
+          <Input
             id="fname"
             label="First Name"
-            color="secondary"
-            variant="outlined"
-            fullWidth
-            error={errors?.fname ? true : false}
-            helperText={errors?.fname ? errors.fname.message : null}
-            sx={{
-              "& .MuiInputLabel-root": { color: "secondary.main" },
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "secondary.main" },
-              },
-            }}
-            autoComplete="off"
+            type="text"
+            errors={errors}
+            register={register}
           />
-          <TextField
-            {...register("lname")}
+          <Input
             id="lname"
             label="Last Name"
-            color="secondary"
-            variant="outlined"
-            fullWidth
-            error={errors?.lname ? true : false}
-            helperText={errors?.lname ? errors.lname.message : null}
-            sx={{
-              "& .MuiInputLabel-root": { color: "secondary.main" },
-              "& .MuiOutlinedInput-root": {
-                "& > fieldset": { borderColor: "secondary.main" },
-              },
-            }}
-            autoComplete="off"
+            type="text"
+            errors={errors}
+            register={register}
           />
         </div>
-        <TextField
-          {...register("email")}
+        <Input
           id="email"
           label="Email"
-          color="secondary"
-          variant="outlined"
-          fullWidth
-          error={errors?.email ? true : false}
-          helperText={errors?.email ? errors.email.message : null}
-          sx={{
-            "& .MuiInputLabel-root": { color: "secondary.main" },
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { borderColor: "secondary.main" },
-            },
-          }}
-          autoComplete="off"
+          type="email"
+          errors={errors}
+          register={register}
         />
-        <TextField
-          {...register("password")}
+        <Input
           id="password"
           label="Password"
-          color="secondary"
-          variant="outlined"
-          fullWidth
-          error={errors?.password ? true : false}
-          helperText={errors?.password ? errors.password.message : null}
-          sx={{
-            "& .MuiInputLabel-root": { color: "secondary.main" },
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { borderColor: "secondary.main" },
-            },
-          }}
-          autoComplete="off"
+          type="password"
+          errors={errors}
+          register={register}
         />
-        <TextField
-          {...register("repeatpassword")}
-          id="repeatPassword"
+        <Input
+          id="repeatpassword"
           label="Repeat Password"
-          color="secondary"
-          variant="outlined"
-          fullWidth
-          error={errors?.repeatpassword ? true : false}
-          helperText={
-            errors?.repeatpassword ? errors.repeatpassword.message : null
-          }
-          sx={{
-            "& .MuiInputLabel-root": { color: "secondary.main" },
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { borderColor: "secondary.main" },
-            },
-          }}
-          autoComplete="off"
+          type="password"
+          errors={errors}
+          register={register}
         />
-        <TextField
-          {...register("phone")}
+        <Input
           id="phone"
           label="Phone"
-          color="secondary"
-          variant="outlined"
-          fullWidth
-          error={errors?.phone ? true : false}
-          helperText={errors?.phone ? errors.phone.message : null}
-          sx={{
-            "& .MuiInputLabel-root": { color: "secondary.main" },
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { borderColor: "secondary.main" },
-            },
-          }}
-          autoComplete="off"
+          type="text"
+          errors={errors}
+          register={register}
         />
+
         <Button variant="contained" color="secondary" sx={{ height: 50 }}>
           Sign Up
         </Button>

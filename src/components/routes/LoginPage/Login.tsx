@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import { loginValidationSchema } from "../../../utils/validatorSchemas";
 import { Button, TextField } from "@mui/material";
+import Input from "../../shared/Input";
 
 interface Credential {
   email: string;
@@ -26,42 +27,26 @@ export default function LoginPage(): ReactElement {
   return (
     <div className="flex container mx-auto justify-center">
       <form className="flex flex-col gap-y-4 w-4/5 " onSubmit={onSubmit}>
-        <TextField
-          {...register("email")}
+        <Input
           id="email"
           label="Email"
-          color="secondary"
-          variant="outlined"
-          fullWidth
-          error={errors?.email ? true : false}
-          helperText={errors?.email ? errors.email.message : null}
-          sx={{
-            "& .MuiInputLabel-root": { color: "secondary.main" },
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { borderColor: "secondary.main" },
-            },
-          }}
-          autoComplete="off"
+          type="email"
+          errors={errors}
+          register={register}
         />
-        <TextField
-          {...register("password")}
+        <Input
           id="password"
           label="Password"
-          color="secondary"
-          variant="outlined"
           type="password"
-          fullWidth
-          error={errors?.password ? true : false}
-          helperText={errors?.password ? errors.password.message : null}
-          sx={{
-            "& .MuiInputLabel-root": { color: "secondary.main" },
-            "& .MuiOutlinedInput-root": {
-              "& > fieldset": { borderColor: "secondary.main" },
-            },
-          }}
-          autoComplete="off"
+          errors={errors}
+          register={register}
         />
-        <Button variant="contained" color="secondary" sx={{ height: 50 }}>
+        <Button
+          variant="contained"
+          color="secondary"
+          sx={{ height: 50 }}
+          type="submit"
+        >
           Sign In
         </Button>
       </form>
