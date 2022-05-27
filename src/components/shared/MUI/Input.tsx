@@ -24,6 +24,7 @@ export default function Input({ id, label, type, errors, register }: Props) {
         "& .MuiInputLabel-root": { color: "secondary.main" },
         "& .MuiOutlinedInput-root": {
           "& > fieldset": { borderColor: "secondary.main" },
+          input: { color: "secondary.main" },
         },
       }}
       autoComplete="off"

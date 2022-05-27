@@ -2,8 +2,8 @@ import { ReactElement } from "react";
 import { useForm } from "react-hook-form";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import { signUpValidationSchema } from "../../../utils/validatorSchemas";
-import { Button, TextField } from "@mui/material";
-import Input from "../../shared/Input";
+import { Button } from "@mui/material";
+import Input from "../../shared/MUI/Input";
 
 interface Credential {
   fname: string;

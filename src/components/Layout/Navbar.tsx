@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CgMenu, CgClose } from "react-icons/cg";
 import { useState } from "react";
-import Menu from "../shared/Menu";
+import Menu from "../shared/MUI/Menu";
 
 const navItems = [
   { pathName: "Home", href: "/" },
