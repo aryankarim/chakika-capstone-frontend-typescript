@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import { useForm } from "react-hook-form";
 import { useYupValidationResolver } from "../../hooks/useYupValidationResolver";
 import { signUpValidationSchema } from "../../../utils/validatorSchemas";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 interface Credential {
   fname: string;
@@ -28,85 +28,116 @@ export default function SignUp(): ReactElement {
 
   return (
     <div className="flex container mx-auto justify-center">
-      <form
-        className="grid grid-cols-2 w-4/5 gap-2 gap-y-7"
-        onSubmit={onSubmit}
-      >
-        {/* <CustomInput
-          label={null}
-          type="text"
-          placeholder="First Name"
-          customStyle="col-span-1 h-10"
-          {...register("fname")}
-        >
-          {errors?.fname && (
-            <p className="text-red-400 text-sm">{errors.fname.message}</p>
-          )}
-        </CustomInput>
-
-        <CustomInput
-          label={null}
-          type="text"
-          placeholder="Last Name"
-          customStyle="col-span-1 h-10"
-          {...register("lname")}
-        >
-          {errors?.lname && (
-            <p className="text-red-400 text-sm">{errors.lname.message}</p>
-          )}{" "}
-        </CustomInput>
-
-        <CustomInput
-          label={null}
-          type="email"
-          placeholder="Email"
-          customStyle="col-span-2 h-10"
+      <form className="flex flex-col w-4/5 gap-2 gap-y-4" onSubmit={onSubmit}>
+        <div className="flex gap-x-4">
+          <TextField
+            {...register("fname")}
+            id="fname"
+            label="First Name"
+            color="secondary"
+            variant="outlined"
+            fullWidth
+            error={errors?.fname ? true : false}
+            helperText={errors?.fname ? errors.fname.message : null}
+            sx={{
+              "& .MuiInputLabel-root": { color: "secondary.main" },
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": { borderColor: "secondary.main" },
+              },
+            }}
+            autoComplete="off"
+          />
+          <TextField
+            {...register("lname")}
+            id="lname"
+            label="Last Name"
+            color="secondary"
+            variant="outlined"
+            fullWidth
+            error={errors?.lname ? true : false}
+            helperText={errors?.lname ? errors.lname.message : null}
+            sx={{
+              "& .MuiInputLabel-root": { color: "secondary.main" },
+              "& .MuiOutlinedInput-root": {
+                "& > fieldset": { borderColor: "secondary.main" },
+              },
+            }}
+            autoComplete="off"
+          />
+        </div>
+        <TextField
           {...register("email")}
-        >
-          {errors?.email && (
-            <p className="text-red-400 text-sm">{errors.email.message}</p>
-          )}
-        </CustomInput>
-
-        <CustomInput
-          label={null}
-          type="password"
-          placeholder="Passowrd"
-          customStyle="col-span-2 h-10"
+          id="email"
+          label="Email"
+          color="secondary"
+          variant="outlined"
+          fullWidth
+          error={errors?.email ? true : false}
+          helperText={errors?.email ? errors.email.message : null}
+          sx={{
+            "& .MuiInputLabel-root": { color: "secondary.main" },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": { borderColor: "secondary.main" },
+            },
+          }}
+          autoComplete="off"
+        />
+        <TextField
           {...register("password")}
-        >
-          {errors?.password && (
-            <p className="text-red-400 text-sm">{errors.password.message}</p>
-          )}
-        </CustomInput>
-
-        <CustomInput
-          label={null}
-          type="password"
-          placeholder="Repeat Password"
-          customStyle="col-span-2 h-10"
+          id="password"
+          label="Password"
+          color="secondary"
+          variant="outlined"
+          fullWidth
+          error={errors?.password ? true : false}
+          helperText={errors?.password ? errors.password.message : null}
+          sx={{
+            "& .MuiInputLabel-root": { color: "secondary.main" },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": { borderColor: "secondary.main" },
+            },
+          }}
+          autoComplete="off"
+        />
+        <TextField
           {...register("repeatpassword")}
-        >
-          {errors?.repeatpassword && (
-            <p className="text-red-400 text-sm">
-              {errors.repeatpassword.message}
-            </p>
-          )}
-        </CustomInput>
-
-        <CustomInput
-          label={null}
-          type="text"
-          placeholder="Phone Number"
-          customStyle="col-span-2 h-10"
+          id="repeatPassword"
+          label="Repeat Password"
+          color="secondary"
+          variant="outlined"
+          fullWidth
+          error={errors?.repeatpassword ? true : false}
+          helperText={
+            errors?.repeatpassword ? errors.repeatpassword.message : null
+          }
+          sx={{
+            "& .MuiInputLabel-root": { color: "secondary.main" },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": { borderColor: "secondary.main" },
+            },
+          }}
+          autoComplete="off"
+        />
+        <TextField
           {...register("phone")}
-        >
-          {errors?.phone && (
-            <p className="text-red-400 text-sm">{errors.phone.message}</p>
-          )}
-        </CustomInput> */}
-
-        <Button>Sign Up</Button>
+          id="phone"
+          label="Phone"
+          color="secondary"
+          variant="outlined"
+          fullWidth
+          error={errors?.phone ? true : false}
+          helperText={errors?.phone ? errors.phone.message : null}
+          sx={{
+            "& .MuiInputLabel-root": { color: "secondary.main" },
+            "& .MuiOutlinedInput-root": {
+              "& > fieldset": { borderColor: "secondary.main" },
+            },
+          }}
+          autoComplete="off"
+        />
+        <Button variant="contained" color="secondary" sx={{ height: 50 }}>
+          Sign Up
+        </Button>
       </form>
     </div>
   );

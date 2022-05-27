@@ -41,6 +41,7 @@ export default function LoginPage(): ReactElement {
               "& > fieldset": { borderColor: "secondary.main" },
             },
           }}
+          autoComplete="off"
         />
         <TextField
           {...register("password")}
@@ -58,6 +59,7 @@ export default function LoginPage(): ReactElement {
               "& > fieldset": { borderColor: "secondary.main" },
             },
           }}
+          autoComplete="off"
         />
         <Button variant="contained" color="secondary" sx={{ height: 50 }}>
           Sign In
