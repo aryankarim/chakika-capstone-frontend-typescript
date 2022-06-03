@@ -7,7 +7,7 @@ const navItems = [
   { pathName: "Home", href: "/" },
   { pathName: "Garage", href: "/garage" },
   { pathName: "Contact Us", href: "/contact" },
-  { pathName: "Find", href: "/" },
+  { pathName: "Search", href: "/search" },
   { pathName: "Cart", href: "/" },
 ];
 

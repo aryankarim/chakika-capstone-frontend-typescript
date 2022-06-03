@@ -5,6 +5,7 @@ import NotFound from "./components/routes/Errors/NotFound";
 import Garage from "./components/routes/GaragePage/Garage";
 import Home from "./components/routes/Homepage/Home";
 import Contact from "./components/routes/ContactPage/Contact";
+import Search from "./components/routes/SearchPage/Search";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/garage" element={<Garage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/search" element={<Search />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
